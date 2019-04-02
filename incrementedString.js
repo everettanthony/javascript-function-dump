@@ -1,8 +1,8 @@
-function incrementString(strng) {
+function incrementString(str) {
   // return incrementedString
-  var letters = strng.replace(/[0-9]/g, ''); 
-  var len = strng.length - letters.length; 
-  var strNew = strng.slice(letters.length) || '0';
+  var letters = str.replace(/[0-9]/g, ''); 
+  var len = str.length - letters.length; 
+  var strNew = str.slice(letters.length) || '0';
   strNew = (parseInt(strNew) + 1).toString();
  
   while (strNew.length < len) {
@@ -12,5 +12,4 @@ function incrementString(strng) {
   return letters.concat(strNew);
 }
 
-
-console.log( incrementString('tony00009') );
+console.log( incrementString('tony00009') ); 
