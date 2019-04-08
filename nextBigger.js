@@ -7,7 +7,7 @@ function nextBigger(n){
     console.log(digit[i] +'===='+ digit[i-1]);
     console.log( digit[i] );
     
-    if (digit[i] > digit[i-1]) {
+    if (+digit[i] > +digit[i-1]) {
       pivotPoint = i-1;
       break;
     }
@@ -30,7 +30,7 @@ function nextBigger(n){
   
   // Find lowest number and lowest number index > pivot number
   var lowestNum = null, lowestNumIdx = null;
-  for (var j = 0; j < right.length; i++) {
+  for (var j = 0; j < right.length; j++) {
     if (right[j] > pivot) {
       if (lowestNum == null || right[j] < lowestNum) {
         lowestNum = right[j];
@@ -52,7 +52,7 @@ function nextBigger(n){
   console.log('New Right Sorted (lowest to highest): ' + right);
   
   // Connect the Left + Pivot Number + New Right
-  var newDigit = digit.concat([lowestNum]).concat(right).join('');
+  var newDigit = +digit.concat([lowestNum]).concat(right).join('');
   if (newDigit < n) return -1;
    
   console.log('Left(' + digit + ') + Lowest Number Greater Than Pivot(' + lowestNum + ') + New Right(' + right + '): ' + newDigit); 
