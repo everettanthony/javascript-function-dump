@@ -24,6 +24,7 @@ const obj = [
 
 const shuffle = ([...arr]) => {
     let m = arr.length;
+    let count = 0;
 
     while (m) {
         const i = Math.floor(Math.random() * m--);
