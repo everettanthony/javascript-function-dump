@@ -62,11 +62,12 @@ const grouped = items.reduce(
 // Generate grouped unordered list element
 for (let group in grouped) {
   let listItem = document.createElement('li');
+  let subList = document.createElement('ul');
   listItem.textContent = group;
   listGrouped.appendChild(listItem);
+  listItem.appendChild(subList);
   
   for (let item in grouped[group]) {
-    let subList = document.createElement('ul');
     let subListItem = document.createElement('li');
     subListItem.textContent = grouped[group][item].value;
     subList.appendChild(subListItem);
